@@ -1,0 +1,189 @@
+/* Header.css */
+
+/* Main header container */
+.header {
+    height: 60px; /* Fixed height for the header */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Vertically align items in the center */
+    background-color: #131921; /* Dark background for the header */
+    position: sticky; /* Makes the header stick to the top when scrolling */
+    top: 0; /* Sticks to the very top */
+    z-index: 100; /* Ensures the header stays on top of other content */
+    padding: 0 20px; /* Add some horizontal padding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Logo section */
+.header__logo {
+    display: flex;
+    align-items: center;
+    color: #fff; /* White text for the logo */
+    margin-right: 20px; /* Space after the logo */
+    cursor: pointer; /* Indicates it's clickable */
+}
+
+/* Styling for the shopping cart icon in the logo */
+.headerlogo {
+    margin-right: 8px; /* Space between icon and text */
+    font-size: 38px !important; /* Important to override Material-UI default size */
+    color: #f0c14b; /* Gold color for the icon */
+}
+
+/* Styling for the "Eshop" text */
+.header__logo h2 {
+    font-size: 26px;
+    font-weight: 700; /* Make the text bold */
+    letter-spacing: 0.5px; /* Slightly space out letters */
+}
+
+/* Search bar container */
+.header__search {
+    display: flex;
+    flex: 1; /* Allows the search bar to take up available space */
+    align-items: center;
+    border-radius: 5px; /* Slightly rounded corners for the search bar */
+    overflow: hidden; /* Ensures icon and input stay within bounds */
+    background-color: #fff; /* White background for the search area */
+}
+
+/* Search input field */
+.header__searchinput {
+    height: 38px;
+    padding: 0 10px; /* Horizontal padding inside the input */
+    border: none; /* Remove default border */
+    width: 100%; /* Take full width of its container */
+    outline: none; /* Remove outline on focus */
+    font-size: 16px;
+    color: #333; /* Darker text color */
+}
+
+/* Search icon button */
+.header__searchicon {
+    padding: 8px; /* Padding around the icon */
+    height: 38px !important; /* Match input height */
+    background-color: #cd9042; /* Gold background for the search button */
+    color: #131921; /* Dark text/icon color */
+    cursor: pointer;
+    border-top-right-radius: 5px; /* Rounded corners for the button */
+    border-bottom-right-radius: 5px;
+    transition: background-color 0.2s ease; /* Smooth transition on hover */
+}
+
+.header__searchicon:hover {
+    background-color: #e4a754; /* Lighter gold on hover */
+}
+
+/* Navigation section */
+.header_nav {
+    display: flex;
+    justify-content: space-evenly; /* Evenly space navigation items */
+    margin-left: 20px; /* Space before navigation items */
+}
+
+/* Individual navigation item container */
+.navitemdiv {
+    display: flex;
+    flex-direction: column; /* Stack text vertically */
+    margin: 0 10px; /* Horizontal margin between items */
+    color: #fff; /* White text for navigation items */
+    cursor: pointer;
+    padding: 5px 8px; /* Add some padding for better click area */
+    border-radius: 3px;
+    transition: background-color 0.2s ease; /* Smooth transition on hover */
+}
+
+.navitemdiv:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slight background change on hover */
+}
+
+/* Top line of text in nav item (e.g., "Hello") */
+.newiteminone {
+    font-size: 13px;
+    line-height: 1.2; /* Adjust line height for better spacing */
+}
+
+/* Bottom line of text in nav item (e.g., "Sign in", "Shop") */
+.newiteminTwo {
+    font-size: 15px;
+    font-weight: 700; /* Bold text */
+    line-height: 1.2;
+}
+
+/* Specific styling for the shopping basket icon */
+.navitemdiv > .MuiSvgIcon-root {
+    font-size: 30px !important; /* Adjust icon size */
+    color: #f0c14b; /* Gold color for the basket icon */
+    margin-bottom: -3px; /* Adjust vertical alignment with text */
+}
+
+/* Style for the last nav item (the basket with count) */
+.navitemdiv:last-child {
+    flex-direction: row; /* Display icon and count horizontally */
+    align-items: center; /* Vertically align them */
+    margin-left: 15px; /* More space for the basket item */
+}
+
+/* Adjust margin for the count next to the basket icon */
+.navitemdiv:last-child .newiteminTwo {
+    margin-left: 6px; /* Space between basket icon and count */
+    font-size: 17px; /* Slightly larger font for the count */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header {
+        flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+        height: auto; /* Auto height to accommodate wrapping */
+        padding: 10px;
+    }
+
+    .header__logo {
+        margin-bottom: 10px; /* Space below logo when wrapped */
+        width: 100%; /* Full width for logo */
+        justify-content: center; /* Center logo */
+    }
+
+    .header__search {
+        order: 3; /* Move search bar to the bottom on small screens */
+        width: 100%; /* Full width for search bar */
+        margin-top: 10px; /* Space above search bar */
+    }
+
+    .header_nav {
+        order: 2; /* Keep nav items in the middle */
+        width: 100%; /* Full width for nav */
+        justify-content: space-around; /* Evenly space nav items */
+        margin-left: 0;
+        margin-top: 10px; /* Space above nav items */
+    }
+
+    .navitemdiv {
+        margin: 0 5px; /* Reduce horizontal margin */
+    }
+
+    .navitemdiv:last-child {
+        margin-left: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header__logo h2 {
+        font-size: 22px; /* Smaller font for logo text */
+    }
+
+    .headerlogo {
+        font-size: 32px !important; /* Smaller logo icon */
+    }
+
+    .newiteminone, .newiteminTwo {
+        font-size: 12px; /* Smaller font for nav text */
+    }
+
+    .navitemdiv > .MuiSvgIcon-root {
+        font-size: 26px !important; /* Smaller basket icon */
+    }
+
+    .navitemdiv:last-child .newiteminTwo {
+        font-size: 14px; /* Smaller font for basket count */
+    }
+}

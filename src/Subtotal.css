@@ -1,0 +1,79 @@
+.subtotal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%; /* Make it take full width of its parent */
+  max-width: 300px; /* Limit max width for larger screens if needed */
+  padding: 20px;
+  background-color: #f7f7f7; /* Slightly lighter background */
+  border: 1px solid #ddd; /* Slightly softer border */
+  border-radius: 8px; /* More rounded corners for a modern look */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
+  line-height: 1.6; /* Improved readability for text */
+}
+
+.subtotal p {
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 8px; /* Space between paragraphs */
+}
+
+.subtotal strong { /* For the total value if you wrap it in strong */
+  font-weight: 700;
+  color: #111;
+}
+
+.subtotal .currencyFormat_value { /* If CurrencyFormat renders a specific class, target it */
+  font-weight: 700; /* Make the actual total value bold */
+  font-size: 22px; /* Make the total value larger */
+  margin-top: 10px; /* Space above the total */
+  color: #111;
+}
+
+
+.subtotal_gift {
+  display: flex;
+  align-items: center;
+  margin-top: 15px; /* Add some space above the gift option */
+  font-size: 14px; /* Smaller font size for the gift text */
+  color: #555;
+}
+
+.subtotal_gift > input {
+  margin-right: 8px; /* Slightly more space for visual clarity */
+  width: 16px; /* Explicit width for consistent checkbox size */
+  height: 16px; /* Explicit height for consistent checkbox size */
+  cursor: pointer;
+}
+
+/* Optional: Add a button style if your Subtotal component eventually has a "Proceed to Checkout" button */
+.subtotal_button {
+  background: #f0c144; /* Standard Amazon button yellow */
+  border: 1px solid;
+  margin-top: 20px; /* Space above the button */
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111;
+  width: 100%; /* Full width button */
+  padding: 10px 0; /* Padding inside the button */
+  border-radius: 4px; /* Rounded button corners */
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s ease; /* Smooth transition on hover */
+}
+
+.subtotal_button:hover {
+  background: #e4b23e; /* Slightly darker yellow on hover */
+}
+
+/* --- Responsive Adjustments (Optional but Recommended) --- */
+@media (max-width: 600px) {
+  .subtotal {
+    padding: 15px; /* Less padding on smaller screens */
+  }
+  .subtotal p {
+    font-size: 16px;
+  }
+  .subtotal .currencyFormat_value {
+    font-size: 20px;
+  }
+}

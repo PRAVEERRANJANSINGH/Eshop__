@@ -1,0 +1,132 @@
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  min-height: 100vh; /* Take full viewport height */
+  background: linear-gradient(to bottom, #f0f2f5, #e0e2e5); /* Soft gradient background */
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in element's total width and height */
+  font-family: 'Inter', sans-serif; /* Modern font */
+}
+
+.login_logo {
+  object-fit: contain;
+  width: 150px; /* Adjust size as needed */
+  margin-bottom: 20px; /* Space below the logo */
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1)); /* Subtle shadow for the logo */
+}
+
+.login_container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 380px; /* Max width for the container on larger screens */
+  padding: 30px;
+  background-color: #ffffff; /* White background for the form */
+  border-radius: 10px; /* More rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* More prominent, soft shadow */
+  border: 1px solid #e0e0e0; /* Light border */
+  text-align: center; /* Center the h1 and form elements */
+}
+
+.login_container > h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 25px; /* Space below the heading */
+  color: #333;
+}
+
+.login_container > form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between form elements */
+  text-align: left; /* Align form labels/inputs to the left within the form */
+}
+
+.login_container > form > h5 {
+  font-weight: 500;
+  margin-bottom: 5px; /* Space between label and input */
+  color: #555;
+  font-size: 15px;
+}
+
+.login_container > form > input {
+  height: 40px; /* Taller input fields */
+  padding: 8px 12px; /* Padding inside input */
+  border: 1px solid #ccc; /* Light grey border */
+  border-radius: 6px; /* Rounded input corners */
+  font-size: 16px;
+  outline: none; /* Remove default outline */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease; /* Smooth transition for focus */
+}
+
+.login_container > form > input:focus {
+  border-color: #007bff; /* Blue border on focus */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Subtle blue glow on focus */
+}
+
+/* Placeholder for potential Sign In/Register buttons */
+.login_signInButton,
+.login_registerButton {
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-top: 20px; /* Space above buttons */
+}
+
+.login_signInButton {
+  background-color: #f0c14b; /* Amazon-like yellow */
+  color: #111;
+  border: 1px solid #a88734;
+}
+
+.login_signInButton:hover {
+  background-color: #e4b23e;
+  transform: translateY(-1px); /* Slight lift on hover */
+}
+
+.login_registerButton {
+  background-color: #e7e9ec; /* Light grey for register */
+  color: #333;
+  border: 1px solid #d5d9d9;
+  margin-top: 10px; /* Space between sign-in and register */
+}
+
+.login_registerButton:hover {
+  background-color: #d8dbdf;
+  transform: translateY(-1px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+  .login_container {
+    padding: 20px;
+    margin: 0 15px; /* Add horizontal margin on very small screens */
+  }
+
+  .login_logo {
+    width: 120px;
+  }
+
+  .login_container > h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .login_container > form > input {
+    height: 38px;
+    font-size: 15px;
+  }
+
+  .login_signInButton,
+  .login_registerButton {
+    font-size: 16px;
+    padding: 10px 0;
+  }
+}

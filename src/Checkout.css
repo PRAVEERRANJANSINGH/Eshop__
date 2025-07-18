@@ -1,0 +1,99 @@
+.checkout {
+  display: flex;
+  padding: 20px;
+  background-color: #eaeded; /* A common Amazon-like background color */
+  min-height: fit-content; /* Ensure it expands to fit content, but isn't excessively tall */
+  width: 100%; /* Take full width of its parent */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.checkout_left {
+  flex: 1; /* Allows the left section to grow and take available space */
+  margin-right: 20px;
+  background-color: white; /* Background for the left panel */
+  padding: 20px;
+  border-radius: 8px; /* Slightly rounded corners */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); /* Subtle shadow */
+}
+
+.checkout_ad {
+  width: 100%;
+  max-height: 120px; /* Slightly reduced max-height for a less imposing ad */
+  object-fit: cover; /* Cover the area, cropping if necessary, but maintaining aspect ratio */
+  margin-bottom: 20px; /* Increased space below the ad */
+  border-radius: 4px; /* Slightly rounded corners for the ad */
+}
+
+.checkout_title {
+  padding-bottom: 10px; /* Padding for the bottom of the title area */
+  border-bottom: 1px solid lightgray;
+  margin-bottom: 20px; /* Increased space below the title for products */
+}
+
+.checkout_title > h2 {
+  font-size: 28px; /* Larger, more prominent heading */
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 0; /* Remove default margin from h2 */
+}
+
+/* Flexbox for the individual CheckoutProduct items - assuming they are direct children */
+.checkout_left > .checkoutProduct { /* Target only CheckoutProduct components directly inside checkout_left */
+  margin-bottom: 20px; /* Space between each product item */
+  padding-bottom: 20px; /* Adds padding inside the product */
+  border-bottom: 1px solid #e7e7e7; /* Separator between products */
+}
+
+.checkout_left > .checkoutProduct:last-child {
+  border-bottom: none; /* No border for the last product */
+  margin-bottom: 0; /* No margin for the last product */
+  padding-bottom: 0;
+}
+
+
+.checkout_right {
+  flex: 0 0 300px; /* Fixed width of 300px for the right column, doesn't grow or shrink */
+  margin-left: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  align-self: flex-start; /* Aligns the subtotal to the top if checkout has more space */
+  position: sticky; /* Makes the subtotal stick as you scroll */
+  top: 20px; /* Distance from the top of the viewport */
+  height: fit-content; /* Ensure the subtotal box only takes up necessary height */
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 960px) {
+  .checkout {
+    flex-direction: column; /* Stack columns on smaller screens */
+    align-items: center; /* Center items when stacked */
+  }
+
+  .checkout_left,
+  .checkout_right {
+    width: 100%; /* Full width for both sections */
+    margin: 0 0 20px 0; /* Adjust margins for stacking */
+    max-width: 700px; /* Max width for content on smaller screens */
+  }
+
+  .checkout_right {
+    position: static; /* Remove sticky behavior on smaller screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .checkout {
+    padding: 10px; /* Less padding on very small screens */
+  }
+
+  .checkout_left,
+  .checkout_right {
+    padding: 15px; /* Adjust padding inside panels */
+  }
+
+  .checkout_title > h2 {
+    font-size: 24px; /* Smaller heading on small screens */
+  }
+}

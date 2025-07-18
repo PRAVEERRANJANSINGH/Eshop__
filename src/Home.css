@@ -1,0 +1,81 @@
+/* Home.css */
+
+/* Main container for the home page */
+.home {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    margin-left: auto; /* Auto margins to center the block */
+    margin-right: auto;
+    max-width: 1500px; /* Max width to prevent content from stretching too wide on large screens */
+    padding-bottom: 30px; /* Add some padding at the bottom */
+}
+
+/* Container for the background image/gradient (currently empty in HTML, but good to style) */
+.home_container {
+    width: 100%; /* Take full width */
+    /* If you want a background color or gradient behind the image, add it here */
+    /* For example: background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0)); */
+}
+
+/* Styling for the main banner image */
+.home_image {
+    width: 100%; /* Make image take full width of its container */
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Fade out image at the bottom */
+    z-index: -1; /* Place image behind other content */
+    margin-bottom: -150px; /* Pull the image up to overlap with the product rows */
+    object-fit: cover; /* Cover the area, cropping if necessary */
+    max-height: 400px; /* Limit the height of the banner image */
+}
+
+/* Container for each row of products */
+.home_row {
+    display: flex; /* Use flexbox to arrange products horizontally */
+    z-index: 1; /* Bring product rows above the faded part of the image */
+    margin: 0 20px; /* Horizontal margin for rows */
+    flex-wrap: wrap; /* Allow products to wrap to the next line on smaller screens */
+    justify-content: center; /* Center products within the row when they wrap */
+    gap: 20px; /* Space between product cards */
+    margin-bottom: 20px; /* Space between rows */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1024px) {
+    .home_image {
+        margin-bottom: -100px; /* Adjust overlap for smaller screens */
+        max-height: 350px;
+    }
+
+    .home_row {
+        margin: 0 15px; /* Reduce horizontal margin */
+        gap: 15px; /* Reduce gap between products */
+    }
+}
+
+@media (max-width: 768px) {
+    .home_image {
+        margin-bottom: -80px; /* Further adjust overlap */
+        max-height: 300px;
+    }
+
+    .home_row {
+        margin: 0 10px; /* Further reduce horizontal margin */
+        gap: 10px; /* Further reduce gap between products */
+        justify-content: space-around; /* Distribute space more evenly */
+    }
+}
+
+@media (max-width: 480px) {
+    .home_image {
+        margin-bottom: -50px; /* Minimal overlap on very small screens */
+        max-height: 250px;
+    }
+
+    .home_row {
+        flex-direction: column; /* Stack products vertically on very small screens */
+        align-items: center; /* Center stacked products */
+        margin: 0; /* Remove horizontal margin */
+        gap: 15px; /* Keep some gap between stacked products */
+    }
+}
